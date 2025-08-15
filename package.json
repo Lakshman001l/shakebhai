@@ -1,0 +1,18 @@
+{
+  "name": "nurture-and-thrive",
+  "version": "1.0.0",
+  "description": "Nurture & Thrive — modern dog caring website with interactive features",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "nodemon server/index.js"
+  },
+  "author": "Your Name <you@example.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
