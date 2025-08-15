@@ -1,0 +1,495 @@
+<!--  -->
+<!--  -->
+<!doctype html>
+<html lang="en" class="antialiased">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:300,400,500,600,700&family=Lora:300,400,500,600,700&display=swap" rel="stylesheet">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Nurture & Thrive - Premium dog caring services: grooming, daycare, training, and loving boarding with real people who care." />
+    <meta property="og:title" content="Nurture & Thrive - Dog Care That Feels Like Home" />
+    <meta property="og:description" content="Trusted dog sitting, grooming, and training with glassmorphism design and thoughtful care. Book a visit today." />
+    <meta property="og:image" content="https://images.pexels.com/photos/3215456/pexels-photo-3215456.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" />
+    <meta name="theme-color" content="#111827" />
+
+    <title>Nurture & Thrive — Dog Caring & Boarding</title>
+
+    <!-- Tailwind CDN (Play) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // Tailwind config: custom colors + dark mode class
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: 'var(--color-primary)',
+              accent: 'var(--color-accent)'
+            }
+          }
+        }
+      }
+    </script>
+
+    <!-- Google Fonts (client will fetch) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+      :root{
+        --color-bg: #0f172a;
+        --color-surface: rgba(255,255,255,0.06);
+        --color-primary: linear-gradient(90deg,#06b6d4,#7c3aed);
+        --glass: rgba(255,255,255,0.06);
+        --accent: #fb7185;
+        --text: #e6eef8;
+      }
+      .dark{
+        --color-bg: #030712;
+        --color-surface: rgba(255,255,255,0.03);
+        --glass: rgba(255,255,255,0.02);
+        --text: #f3f4f6;
+      }
+      body{font-family:'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background: radial-gradient(1200px 600px at 10% 5%, rgba(124,58,237,0.12), transparent), radial-gradient(800px 400px at 95% 95%, rgba(6,182,212,0.06), transparent); color:var(--text);}
+      h1,h2,h3{font-family:'Lora', serif}
+      .glass { background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.04);} 
+      .fluid { width:100%; max-width:none; }
+      /* subtle floating animation */
+      .floaty { animation: floaty 6s ease-in-out infinite; }
+      @keyframes floaty{ 0%{ transform: translateY(0); } 50% { transform: translateY(-6px); } 100%{ transform: translateY(0);} }
+      /* skeleton */
+      .skeleton{ background: linear-gradient(90deg, rgba(255,255,255,0.03) 25%, rgba(255,255,255,0.06) 50%, rgba(255,255,255,0.03) 75%); background-size: 200% 100%; animation: shimmer 1.6s infinite; }
+      @keyframes shimmer{ from{ background-position: 200% 0 } to{ background-position: -200% 0 } }
+      /* parallax utility */
+      .parallax { transform: translateZ(0); will-change: transform; }
+    </style>
+  </head>
+  <body style="font-family: 'Poppins', sans-serif;" class="dark min-h-screen text-white">
+
+    <!-- Top Navigation -->
+    <header class="w-full fixed top-0 left-0 z-50">
+      <nav class="w-full flex items-center justify-between px-6 py-4 glass backdrop-blur-lg shadow-lg">
+        <div class="flex items-center gap-4">
+          <a href="#" onclick="window.parent.handlePreviewNavigation(\'index.html\'); return false;" class="flex items-center gap-3" aria-label="Nurture & Thrive home">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-rose-400 to-violet-500 flex items-center justify-center text-sm font-bold shadow-lg">NT</div>
+            <div class="leading-tight">
+              <div class="text-sm font-semibold">Nurture & Thrive</div>
+              <div class="text-xs text-slate-300">Dog care that feels like home</div>
+            </div>
+          </a>
+        </div>
+
+        <div class="hidden md:flex items-center gap-6">
+          <a href="#" onclick="window.parent.handlePreviewNavigation(\'about.html\'); return false;" class="text-sm hover:underline focus:outline-none">About</a>
+          <a href="./index.html#services" class="text-sm hover:underline">Services</a>
+          <a href="./index.html#gallery" class="text-sm hover:underline">Gallery</a>
+          <a href="#" onclick="window.parent.handlePreviewNavigation(\'contact.html\'); return false;" class="text-sm bg-gradient-to-r from-rose-500 to-violet-500 px-4 py-2 rounded-full text-black font-semibold shadow hover:scale-105 transition-transform">Book Now</a>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <button id="themeToggle" class="p-2 rounded-full hover:scale-105 transition" aria-label="Toggle dark mode">
+            <svg id="themeIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m8.66-9h-1M4.34 12h-1M18.36 5.64l-.7.7M6.34 17.66l-.7.7M18.36 18.36l-.7-.7M6.34 6.34l-.7-.7" />
+            </svg>
+          </button>
+
+          <button id="mobileMenuBtn" class="md:hidden p-2 rounded-full glass" aria-expanded="false" aria-controls="mobileMenu">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Mobile Menu -->
+      <div id="mobileMenu" class="hidden p-4 glass mt-2 mx-4 rounded-lg">
+        <a href="#" onclick="window.parent.handlePreviewNavigation(\'about.html\'); return false;" class="block py-2">About</a>
+        <a href="./index.html#services" class="block py-2">Services</a>
+        <a href="./index.html#gallery" class="block py-2">Gallery</a>
+        <a href="#" onclick="window.parent.handlePreviewNavigation(\'contact.html\'); return false;" class="block py-2 font-semibold bg-gradient-to-r from-rose-500 to-violet-500 text-black px-4 py-2 rounded-full inline-block">Book Now</a>
+      </div>
+    </header>
+
+    <main class="pt-28 w-full fluid">
+      <!-- Hero -->
+      <section id="home" class="w-full relative overflow-hidden">
+        <div class="w-full flex flex-col md:flex-row items-center justify-between px-6 md:px-12 py-12 md:py-24 gap-8">
+
+          <div class="w-full md:w-1/2 space-y-6">
+            <h1 class="text-4xl md:text-6xl leading-tight font-extrabold tracking-tight">Because they deserve more than care — they deserve home.</h1>
+            <p class="text-lg text-slate-200 max-w-prose">At Nurture & Thrive, we believe every dog is family. From tailored training plans to restful boarding and joyful daycare, we bring empathy and expertise together to deliver happier, healthier pups and worry-free owners.</p>
+
+            <div class="flex gap-4 items-center">
+              <a id="ctaPrimary" href="#" onclick="window.parent.handlePreviewNavigation(\'contact.html\'); return false;" class="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-rose-500 to-violet-500 rounded-full font-semibold text-black shadow-lg transform transition hover:scale-105" aria-label="Book a visit">
+                Book a Visit
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </a>
+
+              <button id="playTour" class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass" aria-label="Watch tour">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-rose-400" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                Watch Tour
+              </button>
+            </div>
+
+            <div class="pt-4 flex items-center gap-6">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-rose-300 font-bold">98%</div>
+                <div class="text-sm">
+                  <div class="font-semibold">Client Satisfaction</div>
+                  <div class="text-slate-300 text-xs">From real families — verified</div>
+                </div>
+              </div>
+
+              <div class="hidden sm:flex items-center gap-3">
+                <img src="https://pixabay.com/get/g9e7de1fd90bbe8627e2fc1c9968ff022e0aec3ebfb22c418cc5271c985e13468a50494481a3bf8570ea6746af9b6e43e9f1a80e3bc6f423af1328f4832372fca_640.jpg" alt="trusted" class="w-12 h-12 rounded-lg shadow" loading="lazy">
+                <div class="text-sm">
+                  <div class="font-semibold">Trusted & Insured</div>
+                  <div class="text-slate-300 text-xs">Background-checked team</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- micro CTA progress/gamification -->
+            <div class="pt-6">
+              <div class="text-xs uppercase tracking-wide text-slate-300">Find the perfect plan</div>
+              <div class="w-full bg-white/5 rounded-full h-2 mt-2 overflow-hidden">
+                <div id="planProgress" class="h-2 bg-gradient-to-r from-rose-500 to-violet-500 w-20"></div>
+              </div>
+              <div class="text-xs text-slate-300 pt-2">Complete our 3-step quiz to match with a tailored care plan. <button id="startQuiz" class="text-rose-300 underline">Start Quiz</button></div>
+            </div>
+          </div>
+
+          <div class="w-full md:w-1/2 relative">
+            <div class="relative w-full h-72 md:h-96 rounded-2xl overflow-hidden glass shadow-xl parallax floaty">
+              <img id="heroImg" src="https://images.pexels.com/photos/675903/pexels-photo-675903.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Golden retriever smiling" class="w-full h-full object-cover" loading="lazy">
+              <div class="absolute left-6 bottom-6 glass p-3 rounded-lg backdrop-blur-sm flex items-center gap-3 max-w-xs">
+                <img src="https://images.pexels.com/photos/32893514/pexels-photo-32893514.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="pet" class="w-12 h-12 rounded-full object-cover shadow">
+                <div>
+                  <div class="font-semibold">Milo</div>
+                  <div class="text-xs text-slate-300">Found confidence with our training program</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- floating badges -->
+            <div class="absolute right-6 top-6 flex flex-col gap-3">
+              <div class="glass p-3 rounded-lg w-44 shadow-lg">
+                <div class="text-xs text-slate-300">Grooming Slot</div>
+                <div class="font-semibold">Today • 4:30 PM</div>
+              </div>
+              <div class="glass p-3 rounded-lg w-44 shadow-lg">
+                <div class="text-xs text-slate-300">Daycare</div>
+                <div class="font-semibold">Joyful Playrooms</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- parallax background shapes -->
+        <div class="pointer-events-none absolute -top-20 left-1/4 w-96 h-96 rounded-full bg-gradient-to-tr from-rose-400 to-violet-500 opacity-10 transform translateZ(-1px)" aria-hidden="true"></div>
+      </section>
+
+      <!-- Services -->
+      <section id="services" class="w-full px-6 md:px-12 py-12">
+        <div class="w-full grid md:grid-cols-3 gap-6">
+          <div class="glass p-6 rounded-xl shadow-lg hover:scale-102 transition-transform">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-rose-500 to-violet-500 flex items-center justify-center font-bold">1</div>
+              <div>
+                <h3 class="font-semibold text-xl">Daily Daycare</h3>
+                <p class="text-slate-300 text-sm">Stimulating playgroups and nap times kept on a predictable schedule. Great for social pups and busy owners.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass p-6 rounded-xl shadow-lg hover:scale-102 transition-transform">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-teal-400 to-indigo-500 flex items-center justify-center font-bold">2</div>
+              <div>
+                <h3 class="font-semibold text-xl">Grooming & Spa</h3>
+                <p class="text-slate-300 text-sm">Stress-free grooming with gentle, low-noise dryers and trained stylists to make every pup feel pampered.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass p-6 rounded-xl shadow-lg hover:scale-102 transition-transform">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center font-bold">3</div>
+              <div>
+                <h3 class="font-semibold text-xl">Training & Behavior</h3>
+                <p class="text-slate-300 text-sm">Positive reinforcement programs personalized to your dog’s temperament and goals.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features & Testimonials -->
+      <section class="w-full px-6 md:px-12 py-12">
+        <div class="w-full md:flex gap-8 items-start">
+          <div class="md:w-1/2 glass p-6 rounded-xl shadow-lg">
+            <h2 class="text-2xl font-bold">Why owners trust us</h2>
+            <p class="text-slate-300 mt-2">We treat every dog like family. Our caregivers are trained, insured, and background-checked. We log your dog's day with photos, notes, and a personalized report card after each stay.</p>
+
+            <ul class="mt-4 space-y-3 text-sm text-slate-300">
+              <li class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-rose-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 00-1.414 0L8.5 12.086 5.707 9.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l8-8a1 1 0 000-1.414z" clip-rule="evenodd" /></svg>Daily photo updates</li>
+              <li class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-violet-400" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927C9.432 1.69 10.57 1 11.828 1h.344c1.258 0 2.396.69 2.779 1.927l.343 1.134c.17.563.658.964 1.246 1.016l1.205.106c1.3.114 1.905 1.78 1 2.67l-1 1c-.4.4-.583 1.03-.454 1.617l.31 1.547c.236 1.18-.57 2.31-1.77 2.55l-1.44.33c-.555.128-1 .583-1.12 1.14l-.22 1.243c-.43 2.42-3.43 3.02-4.88.86l-.92-1.19c-.36-.46-1.01-.66-1.59-.48l-1.38.48c-1.22.43-2.55-.39-2.55-1.74V9.5c0-.08.01-.16.03-.24L4.9 6.46c.32-.89 1.08-1.57 1.99-1.76l1.18-.28c.56-.13 1.04-.5 1.27-1.03l.42-1.04z"/></svg>Veterinarian partners</li>
+              <li class="flex items-center gap-3"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-teal-300" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v4a1 1 0 00.293.707l2 2a1 1 0 001.414-1.414L11 10.586V7z" clip-rule="evenodd" /></svg>Flexible scheduling & pickup</li>
+            </ul>
+
+            <div class="mt-6">
+              <div class="text-xs uppercase tracking-wide text-slate-300">Featured in</div>
+              <div class="flex gap-4 mt-4 items-center">
+                <img src="https://images.pexels.com/photos/1069798/pexels-photo-1069798.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="press" class="w-24 opacity-70">
+                <img src="https://images.pexels.com/photos/7468067/pexels-photo-7468067.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="award" class="w-20 opacity-70">
+                <img src="https://pixabay.com/get/g66eddc76c70fa4974b98b891dc3edbc117ce44a6ab9b0c8047655f8d4fc69dc25c49203ff64bc842baf382fc8dca7b2d_640.jpg" alt="community" class="w-20 opacity-70">
+              </div>
+            </div>
+          </div>
+
+          <div class="md:w-1/2 mt-6 md:mt-0 grid gap-6">
+            <div class="glass p-6 rounded-xl shadow-lg">
+              <div class="flex items-start gap-4">
+                <img src="https://images.unsplash.com/photo-1649313170565-04b38ad0c4e8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODkyNDZ8MHwxfHNlYXJjaHwzfHxzbWlsaW5nJTIwd29tYW4lMjB3aXRoJTIwaGVyJTIwZG9nJTIwdGVzdGltb25pYWx8ZW58MHwwfHx8MTc1NTI3NDQ2MXww&ixlib=rb-4.1.0&q=80&w=1080" alt="testimonial" class="w-12 h-12 rounded-full object-cover shadow">
+                <div>
+                  <div class="font-semibold">"They saved our sanity!"</div>
+                  <div class="text-slate-300 text-sm">"The team is patient, communicates constantly, and made our rescue pup feel safe. Highly recommend." — Sarah L.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="glass p-6 rounded-xl shadow-lg">
+              <div class="flex items-start gap-4">
+                <img src="https://images.unsplash.com/photo-1655666229816-e9e124152400?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODkyNDZ8MHwxfHNlYXJjaHwyfHx0ZXN0aW1vbmlhbCUyMGNvdXBsZSUyMHdpdGglMjB0d28lMjBkb2dzfGVufDB8MHx8fDE3NTUyNzQ0NjJ8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="testimonial" class="w-12 h-12 rounded-full object-cover shadow">
+                <div>
+                  <div class="font-semibold">"Training results in 6 weeks"</div>
+                  <div class="text-slate-300 text-sm">"Our lab stopped pulling during walks and listens for recall — their positive approach works." — Marcus P.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="glass p-6 rounded-xl shadow-lg">
+              <div class="flex items-start gap-4">
+                <img src="https://pixabay.com/get/g6a93a631596aa5a2780751429a7599a86447bd536075505f0197283682dd25b09c3e291f78d0da75334e5b6356f6b3f2_640.jpg" alt="testimonial" class="w-12 h-12 rounded-full object-cover shadow">
+                <div>
+                  <div class="font-semibold">"I love the daily photos"</div>
+                  <div class="text-slate-300 text-sm">"We get multiple updates and our pup looks so happy in every single one." — Priya R.</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Gallery / Slider -->
+      <section id="gallery" class="w-full px-6 md:px-12 py-12">
+        <h2 class="text-2xl font-bold mb-4">A day at Nurture & Thrive</h2>
+        <div class="w-full relative">
+          <div id="slider" class="w-full overflow-hidden rounded-2xl shadow-lg">
+            <div id="slides" class="flex transition-transform duration-700">
+              <img data-src="https://pixabay.com/get/gf354735dd5387014093460d1e3d1722356fb4ccfe9a6ccf7d20cc8d5ee83c6cbe047d7fcba835c0e1190ffa854cb5aff28171ee493c79164deb0bbcf686585a8_640.jpg" alt="corgi" class="w-full h-64 object-cover lazy" loading="lazy">
+              <img data-src="https://pixabay.com/get/gb596a073a0c48ee14b17d75e17a663de0b0cf8a438af6debc2b4ae3da1008a35f6bc7f2330addef2306bec38ac364f9c1ba2f3d978df58425d108628b9d0da20_640.jpg" alt="puppies" class="w-full h-64 object-cover lazy" loading="lazy">
+              <img data-src="https://images.pexels.com/photos/9165672/pexels-photo-9165672.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="grooming" class="w-full h-64 object-cover lazy" loading="lazy">
+            </div>
+          </div>
+
+          <div class="absolute left-4 top-1/2 -translate-y-1/2">
+            <button id="prevSlide" class="p-2 glass rounded-full">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+            </button>
+          </div>
+          <div class="absolute right-4 top-1/2 -translate-y-1/2">
+            <button id="nextSlide" class="p-2 glass rounded-full">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Accordion + CTA -->
+      <section class="w-full px-6 md:px-12 py-12">
+        <div class="md:flex gap-8 items-start">
+          <div class="md:w-1/2 glass p-6 rounded-xl shadow-lg">
+            <h3 class="text-xl font-semibold">Frequently asked</h3>
+            <div id="faq" class="mt-4 space-y-3">
+              <div class="faq-item glass p-3 rounded-lg" tabindex="0">
+                <button class="w-full text-left flex items-center justify-between faq-toggle" aria-expanded="false">What does a typical daycare day look like?<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg></button>
+                <div class="faq-body hidden text-slate-300 text-sm pt-3">Play groups, supervised rest, enrichment toys, short training sessions and potty breaks scheduled throughout the day. We send photos midday and a report at pickup.</div>
+              </div>
+
+              <div class="faq-item glass p-3 rounded-lg" tabindex="0">
+                <button class="w-full text-left flex items-center justify-between faq-toggle" aria-expanded="false">Are vaccinations required?<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg></button>
+                <div class="faq-body hidden text-slate-300 text-sm pt-3">Yes. Rabies, distemper/parvo, and Bordetella are required for daycare and boarding. We can help arrange vet verification if needed.</div>
+              </div>
+
+              <div class="faq-item glass p-3 rounded-lg" tabindex="0">
+                <button class="w-full text-left flex items-center justify-between faq-toggle" aria-expanded="false">What if my dog has separation anxiety?<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" /></svg></button>
+                <div class="faq-body hidden text-slate-300 text-sm pt-3">We create personalized transition plans including short trial days, extra enrichment, and video updates to help reduce stress for anxious dogs.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="md:w-1/2 glass p-6 rounded-xl shadow-lg">
+            <h3 class="text-xl font-semibold">Ready to give them a better day?</h3>
+            <p class="text-slate-300 mt-2">Book your first visit and get 10% off the first week of daycare. Limited slots each week — reserve now to secure your pup's favorite spot.</p>
+            <div class="mt-4">
+              <a href="#" onclick="window.parent.handlePreviewNavigation(\'contact.html\'); return false;" class="inline-block px-6 py-3 bg-gradient-to-r from-rose-500 to-violet-500 rounded-full font-semibold text-black shadow hover:scale-105 transition">Reserve & Save</a>
+            </div>
+
+            <div class="mt-6">
+              <div class="text-xs text-slate-300">Our Promise</div>
+              <div class="text-sm font-semibold">24/7 Emergency contact • Daily activity logs • Safe, cleaned spaces</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="w-full px-6 md:px-12 py-8 glass mt-6">
+        <div class="md:flex justify-between items-center">
+          <div class="mb-4 md:mb-0">
+            <div class="font-semibold">Nurture & Thrive</div>
+            <div class="text-slate-300 text-sm">Find joy in every wag — visit us or schedule a meet & greet.</div>
+          </div>
+
+          <div class="flex gap-6 items-center">
+            <a href="#" onclick="window.parent.handlePreviewNavigation(\'about.html\'); return false;" class="text-sm">About</a>
+            <a href="#" onclick="window.parent.handlePreviewNavigation(\'contact.html\'); return false;" class="text-sm">Contact</a>
+            <div class="text-sm text-slate-400">© 2025 Nurture & Thrive</div>
+          </div>
+        </div>
+      </footer>
+
+    </main>
+
+    <!-- Modal Tour (hidden) -->
+    <div id="tourModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50">
+      <div class="w-11/12 md:w-2/3 lg:w-1/2 glass rounded-2xl overflow-hidden shadow-xl">
+        <div class="p-6">
+          <div class="flex justify-between items-center">
+            <h3 class="text-xl font-semibold">Take a quick tour</h3>
+            <button id="closeTour" class="p-2 rounded-full glass">✕</button>
+          </div>
+
+          <div class="mt-4 w-full h-64 bg-slate-800 rounded-lg flex items-center justify-center">
+            <div class="text-slate-400">Tour video placeholder — imagine a warm montage of playtime, training and spa care.</div>
+          </div>
+
+          <div class="mt-4 flex justify-end">
+            <button id="bookFromModal" class="px-6 py-2 bg-gradient-to-r from-rose-500 to-violet-500 rounded-full text-black font-semibold">Book a Visit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Theme toggle
+      const themeBtn = document.getElementById('themeToggle');
+      const htmlEl = document.documentElement;
+      const bodyEl = document.body;
+      const themeIcon = document.getElementById('themeIcon');
+      const saved = localStorage.getItem('nt-theme');
+      if(saved === 'light') bodyEl.classList.remove('dark');
+      else bodyEl.classList.add('dark');
+
+      function updateIcon(){
+        if(bodyEl.classList.contains('dark')){
+          themeIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m8.66-9h-1M4.34 12h-1M18.36 5.64l-.7.7M6.34 17.66l-.7.7M18.36 18.36l-.7-.7M6.34 6.34l-.7-.7" />';
+        } else {
+          themeIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 118.646 3.646 7 7 0 0020.354 15.354z"/>';
+        }
+      }
+      updateIcon();
+
+      themeBtn.addEventListener('click', ()=>{
+        bodyEl.classList.toggle('dark');
+        const t = bodyEl.classList.contains('dark') ? 'dark' : 'light';
+        localStorage.setItem('nt-theme', t);
+        updateIcon();
+      });
+
+      // Mobile menu
+      const mobileBtn = document.getElementById('mobileMenuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      mobileBtn.addEventListener('click', ()=>{
+        const expanded = mobileMenu.classList.toggle('hidden');
+        mobileBtn.setAttribute('aria-expanded', String(!expanded));
+      });
+
+      // Slider
+      const slidesEl = document.getElementById('slides');
+      const slides = slidesEl.children;
+      let index = 0;
+      document.getElementById('nextSlide').addEventListener('click', ()=>{ index = (index+1) % slides.length; updateSlider(); });
+      document.getElementById('prevSlide').addEventListener('click', ()=>{ index = (index-1 + slides.length) % slides.length; updateSlider(); });
+      function updateSlider(){ slidesEl.style.transform = `translateX(-${index * 100}%)`; }
+      setInterval(()=>{ index = (index+1)%slides.length; updateSlider(); }, 5000);
+
+      // Lazy load images with data-src
+      const lazyImgs = document.querySelectorAll('img.lazy');
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(entry=>{
+          if(entry.isIntersecting){
+            const img = entry.target;
+            const src = img.getAttribute('data-src');
+            if(src){ img.src = src; img.removeAttribute('data-src'); }
+            io.unobserve(img);
+          }
+        });
+      }, {rootMargin: '200px'});
+      lazyImgs.forEach(img=>io.observe(img));
+
+      // FAQ accordion
+      document.querySelectorAll('.faq-toggle').forEach(btn=>{
+        btn.addEventListener('click', (e)=>{
+          const parent = btn.closest('.faq-item');
+          const body = parent.querySelector('.faq-body');
+          const open = !body.classList.contains('hidden');
+          document.querySelectorAll('.faq-body').forEach(b=>b.classList.add('hidden'));
+          document.querySelectorAll('.faq-toggle').forEach(t=>t.setAttribute('aria-expanded','false'));
+          if(!open){ body.classList.remove('hidden'); btn.setAttribute('aria-expanded','true'); }
+        });
+      });
+
+      // Tour modal
+      const tourModal = document.getElementById('tourModal');
+      document.getElementById('playTour').addEventListener('click', ()=>{ tourModal.classList.remove('hidden'); tourModal.classList.add('flex'); });
+      document.getElementById('closeTour').addEventListener('click', ()=>{ tourModal.classList.add('hidden'); tourModal.classList.remove('flex'); });
+      document.getElementById('bookFromModal').addEventListener('click', ()=>{ window.location.href = './contact.html'; });
+
+      // Plan progress / quiz stub
+      const planProgress = document.getElementById('planProgress');
+      const startQuiz = document.getElementById('startQuiz');
+      startQuiz.addEventListener('click', ()=>{
+        let progress = 20;
+        planProgress.style.width = progress + '%';
+        const interval = setInterval(()=>{
+          progress += 26;
+          planProgress.style.width = progress + '%';
+          if(progress >= 100){ clearInterval(interval); setTimeout(()=>{ alert('Quiz complete! We recommend our Balanced Care Plan.'); planProgress.style.width = '20%'; }, 800); }
+        }, 800);
+      });
+
+      // Accessibility: keyboard close modal
+      document.addEventListener('keydown', (e)=>{
+        if(e.key === 'Escape'){
+          if(!tourModal.classList.contains('hidden')){ tourModal.classList.add('hidden'); tourModal.classList.remove('flex'); }
+        }
+      });
+
+      // Parallax effect on hero image based on mouse
+      const heroImg = document.getElementById('heroImg');
+      const heroSection = document.querySelector('#home');
+      heroSection.addEventListener('mousemove', (e)=>{
+        const rect = heroSection.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        heroImg.style.transform = `translate(${x*10}px, ${y*6}px) scale(1.02)`;
+      });
+      heroSection.addEventListener('mouseleave', ()=>{ heroImg.style.transform = 'translate(0,0) scale(1)'; });
+
+    </script>
+  </body>
+</html>
