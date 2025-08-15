@@ -1,0 +1,170 @@
+<!--  -->
+<!--  -->
+<!doctype html>
+<html lang="en" class="antialiased">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:300,400,500,600,700&family=Lora:300,400,500,600,700&display=swap" rel="stylesheet">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Contact Nurture & Thrive — Book visits, ask questions, or join our team." />
+    <title>Contact — Nurture & Thrive</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      body{font-family:'Poppins',sans-serif; background: linear-gradient(180deg,#07122a 0%, #061226 100%); color:#e8eef8}
+      .glass{ background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.03)}
+      .fluid { width:100%; max-width:none; }
+    </style>
+  </head>
+  <body style="font-family: 'Poppins', sans-serif;" class="min-h-screen">
+    <header class="w-full glass p-4 fixed top-0 left-0 z-40">
+      <div class="flex justify-between items-center px-6">
+        <a href="#" onclick="window.parent.handlePreviewNavigation(\'index.html\'); return false;" class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-rose-400 to-violet-500 flex items-center justify-center font-bold">NT</div>
+          <div class="text-sm">Nurture & Thrive</div>
+        </a>
+        <div class="flex gap-4 items-center">
+          <a href="#" onclick="window.parent.handlePreviewNavigation(\'index.html\'); return false;" class="text-sm">Home</a>
+          <a href="#" onclick="window.parent.handlePreviewNavigation(\'about.html\'); return false;" class="text-sm">About</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="pt-24 fluid w-full px-6 md:px-12">
+      <section class="w-full grid md:grid-cols-2 gap-8 py-12">
+        <div class="glass p-8 rounded-2xl shadow-lg">
+          <h1 class="text-3xl font-bold">Get in touch</h1>
+          <p class="text-slate-300 mt-2">Have questions or ready to book? Fill the form and our team will respond within a business day. For urgent boarding needs, call us directly.</p>
+
+          <div class="mt-6 space-y-4">
+            <div class="flex items-start gap-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-rose-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              <div>
+                <div class="font-semibold">hello@nurtureandthrive.com</div>
+                <div class="text-slate-300 text-sm">General inquiries</div>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-teal-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m12 12v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/></svg>
+              <div>
+                <div class="font-semibold">(555) 123-4567</div>
+                <div class="text-slate-300 text-sm">Call for urgent boarding</div>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-violet-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .672-3 1.5S10.343 11 12 11s3-.672 3-1.5S13.657 8 12 8zM7 20h10"/></svg>
+              <div>
+                <div class="font-semibold">123 Pup Lane, Happy City</div>
+                <div class="text-slate-300 text-sm">Map & directions</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6">
+            <h3 class="font-semibold">Book by phone?</h3>
+            <p class="text-slate-300 text-sm">Call us any day between 8am-6pm to discuss immediate needs and special accommodations.</p>
+          </div>
+        </div>
+
+        <div class="glass p-6 rounded-2xl shadow-lg">
+          <h2 class="text-xl font-semibold">Contact form</h2>
+          <p class="text-slate-300 text-sm mt-2">Tell us about your dog, preferred dates, and special notes. We'll reply with availability and next steps.</p>
+
+          <form id="contactForm" class="mt-4 grid gap-4" novalidate>
+            <div>
+              <label class="text-xs">Your name</label>
+              <input name="name" required class="w-full mt-1 p-3 rounded-lg bg-transparent border border-white/6 focus:ring-2 focus:ring-rose-400 outline-none" placeholder="Jane Doe">
+              <p class="text-rose-300 text-xs hidden" id="err-name">Please enter your name</p>
+            </div>
+
+            <div>
+              <label class="text-xs">Email</label>
+              <input name="email" type="email" required class="w-full mt-1 p-3 rounded-lg bg-transparent border border-white/6 focus:ring-2 focus:ring-violet-400 outline-none" placeholder="you@domain.com">
+              <p class="text-rose-300 text-xs hidden" id="err-email">Enter a valid email</p>
+            </div>
+
+            <div>
+              <label class="text-xs">Phone</label>
+              <input name="phone" class="w-full mt-1 p-3 rounded-lg bg-transparent border border-white/6 focus:ring-2 focus:ring-teal-400 outline-none" placeholder="(555) 123-4567">
+            </div>
+
+            <div>
+              <label class="text-xs">Dog details</label>
+              <textarea name="details" rows="4" class="w-full mt-1 p-3 rounded-lg bg-transparent border border-white/6 focus:ring-2 focus:ring-rose-400 outline-none" placeholder="Breed, age, behavior notes, any medications"></textarea>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <input type="checkbox" id="gdpr" required>
+              <label for="gdpr" class="text-sm text-slate-300">I agree to receive booking and care updates</label>
+            </div>
+
+            <div class="flex gap-3">
+              <button type="submit" class="px-4 py-2 bg-gradient-to-r from-rose-500 to-violet-500 rounded-full text-black font-semibold">Send Message</button>
+              <button type="button" id="clearBtn" class="px-4 py-2 glass rounded-full">Clear</button>
+            </div>
+
+            <div id="formMsg" class="text-sm text-slate-300 hidden"></div>
+
+          </form>
+
+        </div>
+      </section>
+
+      <section class="w-full py-12">
+        <div class="glass p-6 rounded-xl">
+          <h3 class="font-semibold">Visit us</h3>
+          <p class="text-slate-300 text-sm mt-2">We welcome tours by appointment so your dog can meet the team in a calm setting. <a href="#" onclick="window.parent.handlePreviewNavigation(\'contact.html\'); return false;" class="underline">Request one today</a>.</p>
+          <div class="mt-4 w-full h-48 bg-slate-800 rounded-lg flex items-center justify-center text-slate-400">Map placeholder (interactive map integration optional)</div>
+        </div>
+      </section>
+
+      <footer class="w-full text-center text-slate-400 mt-8 pb-12">© 2025 Nurture & Thrive</footer>
+    </main>
+
+    <script>
+      // Simple form validation + submission to server API
+      const form = document.getElementById('contactForm');
+      const errName = document.getElementById('err-name');
+      const errEmail = document.getElementById('err-email');
+      const formMsg = document.getElementById('formMsg');
+      const clearBtn = document.getElementById('clearBtn');
+
+      function validateEmail(email){ return /\S+@\S+\.\S+/.test(email); }
+
+      form.addEventListener('submit', async (e)=>{
+        e.preventDefault();
+        const data = new FormData(form);
+        const name = data.get('name')?.trim();
+        const email = data.get('email')?.trim();
+        const phone = data.get('phone')?.trim();
+        const details = data.get('details')?.trim();
+        const gdpr = form.querySelector('#gdpr').checked;
+
+        let ok = true;
+        if(!name){ errName.classList.remove('hidden'); ok = false; } else errName.classList.add('hidden');
+        if(!validateEmail(email)){ errEmail.classList.remove('hidden'); ok = false; } else errEmail.classList.add('hidden');
+        if(!gdpr){ alert('Please agree to receive updates.'); ok = false; }
+        if(!ok) return;
+
+        formMsg.classList.remove('hidden'); formMsg.textContent = 'Sending...';
+
+        try{
+          const res = await fetch('/api/contact', {
+            method: 'POST', headers: {'Content-Type':'application/json'},
+            body: JSON.stringify({name,email,phone,details})
+          });
+          const json = await res.json();
+          if(res.ok){ formMsg.textContent = 'Thanks! We received your message. We will reply within 24 hours.'; form.reset(); }
+          else { formMsg.textContent = json.error || 'There was an error. Please try again later.'; }
+        }catch(err){ formMsg.textContent = 'Network error. Please call us.'; }
+      });
+
+      clearBtn.addEventListener('click', ()=>{ form.reset(); errName.classList.add('hidden'); errEmail.classList.add('hidden'); formMsg.classList.add('hidden'); });
+    </script>
+  </body>
+</html>
